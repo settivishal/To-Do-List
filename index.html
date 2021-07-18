@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>ToDo List Demo</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>to-do list</h2>
+      </header>
+      <div class="todo-container">
+        <!-- <div class="items">
+          <input
+            type="text"
+            class="item-input"
+            id="item"
+            value="Assignment-1"
+            disabled="true"
+          />
+          <button class="edit-button">EDIT</button>
+          <button class="remove-button">X</button>
+        </div> -->
+      </div>
+      <section class="add-items">
+        <input
+          type="text"
+          placeholder="Add an item"
+          class="input"
+          onfocus="this.select();"
+          onmouseup="return false;"
+        />
+        <button type="submit" class="addButton" id="add">add item</button>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+@import "config";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+body {
+  @include flex-box(center);
+  height: 100vh;
+  background: lighten($accent-color, 30%);
+}
+
+// --------container----------
+.container {
+  min-height: 60vh;
+  min-width: 45%;
+  background: whitesmoke;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+// ---------header---------
+header {
+  text-transform: uppercase;
+  background: $accent-color;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+
+  h2 {
+    padding: 15px;
+    color: $text-color;
+  }
+}
+
+// ----------todo-list container--------
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .items {
+    padding: 2px;
+    @include flex-box(space-between);
+    width: 100%;
+    // margin-bottom: 0rem;
+    // border-bottom: 4px solid red;
+
+    .item-input {
+      background: transparent;
+      outline: none;
+      color: black;
+      border: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      text-transform: capitalize;
+      font-weight: 600;
+
+      &:focus {
+        background: transparent;
+      }
+    }
+
+    .edit-button {
+      height: 40px;
+      width: 60px;
+      font-size: 1rem;
+      margin: 0 2px;
+      margin-left: auto;
+      padding: 5px;
+      background: grey;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.1s;
+
+      &:hover {
+        background: orange;
+      }
+    }
+
+    .remove-button {
+      height: 40px;
+      width: 60px;
+      font-size: 1rem;
+      margin: 0 2px;
+      margin-right: 0;
+      padding: 5px;
+      background: red;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.1s;
+
+      &:hover {
+        background: darken(red, 5%);
+      }
+    }
+  }
+}
+
+// ---------footer---------
+.add-items {
+  border: 0.5px solid $accent-color;
+  border-radius: 0 0 $border-radius $border-radius;
+  padding: 10px;
+
+  .input {
+    border: 2px solid $accent-color;
+    margin: 5px 40px;
+    margin-left: 10%;
+    padding: 5px;
+    width: 300px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .addButton {
+    border: none;
+    padding: 10px;
+    font-size: 11px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 5px 40px;
+    background-color: $text-color;
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}

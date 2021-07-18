@@ -1,0 +1,10 @@
+$border-radius: 5px;
+$accent-color: #5b45b9;
+$text-color: #e8e7e7;
+
+// ------------flexbox----------
+@mixin flex-box($position) {
+  display: flex;
+  justify-content: $position;
+  align-items: center;
+}
