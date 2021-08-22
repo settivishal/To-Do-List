@@ -1,6 +1,6 @@
 // ------------footer----------
 const addButton = document.querySelector('.addButton');
-var input = document.querySelector('.input');
+let input = document.querySelector('.input');
 
 // ------------todo container------
 const container = document.querySelector('.todo-container');
@@ -11,15 +11,16 @@ function item(itemName) {
 }
 
 function createDiv(itemName) {
+    // --------div element--------
+    let itemBox = document.createElement('div');
+    itemBox.classList.add('items');
+
+    // -------- list elements-----
     let input = document.createElement('input');
     input.value = itemName;
     input.disabled = true;
     input.classList.add('item-input');
     input.type = "text";
-
-    // --------div element--------
-    let itemBox = document.createElement('div');
-    itemBox.classList.add('items');
 
     // ------edit button--------
     let editButton = document.createElement('button');
@@ -50,23 +51,10 @@ function remove(item) {
     container.removeChild(item);
 }
 
-// ----------local storage--------
-// function saveToDos(input){
-//     toDoList.push(input);
-//     localStorage.setItem("todos",JSON.stringify(toDoList));
-// }
-
-// function getToDos(){
-//     toDoList = JSON.parse(localStorage.getItem("todos"));
-//     if(!toDoList){
-//         toDoList = [];
-//     }
-// }
-
 // --------default items------
-new item('Assignmnent-1');
-new item('Assignmnent-2');
-new item('Assignmnent-3');
+new item('Assignment-1');
+new item('Assignment-2');
+new item('Assignment-3');
 
 // ----------adding custom items-------
 function check() {
@@ -77,7 +65,7 @@ function check() {
     }
     else {
         input.style.borderColor = "red";
-        input.setAttribute('placeholder', "!ENTER VALID INPUT");
+        input.setAttribute('placeholder', "ENTER VALID INPUT!!");
         input.style.fontSize = "75%";
         input.addEventListener('click', () => {
             input.setAttribute('placeholder', "");
